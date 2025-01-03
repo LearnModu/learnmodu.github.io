@@ -7,12 +7,50 @@
 	font-family: 'Funnel Sans', sans-serif;
 }
 
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	transition: background-color 0.3s, color 0.3s;
+}
+
+:root[data-theme="light"] {
+	--bg: #fff;
+	--text: #000;
+	--nav-bg: rgba(255, 255, 255, 0.1);
+	--sect-bg: rgba(255, 255, 255, 0.1);
+	--shadow: rgba(31, 38, 135, 0.2);
+}
+
+:root[data-theme="dark"] {
+	--bg: #1a1a1a;
+	--text: #fff;
+	--nav-bg: rgba(0, 0, 0, 0.2);
+	--sect-bg: rgba(0, 0, 0, 0.2);
+	--shadow: rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.theme-toggle svg {
+	width: 24px;
+	height: 24px;
+	fill: var(--text);
+}
+
 .nav {
 	position: fixed;
 	top: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(255, 255, 255, 0.1);
+	background: var(--nav-bg);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	border-radius: 20px;
@@ -36,11 +74,16 @@
 }
 
 .nav-link {
-	color: #333;
+	color: var(--text);
 	text-decoration: none;
 	font-weight: 500;
 	transition: 0.3s;
 	font-size: 20px;
+}
+
+.nav-link.active {
+	color: var(--text);
+	font-weight: 700;
 }
 
 .nav-link:hover {
@@ -60,7 +103,7 @@
 	margin-bottom: 60px;
 	padding: 30px;
 	border-radius: 20px;
-	background: rgba(255, 255, 255, 0.1);
+	background: var(--bg);
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
 }
