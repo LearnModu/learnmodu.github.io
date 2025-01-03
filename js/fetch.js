@@ -1,9 +1,9 @@
 import { parse } from "./parse";
 
 export async function fetchPosts() {
-    const posts = await fetch('/public/posts/');
-    const files = await posts.json();
-    return files.filter(f => f.endsWith(".md"))
+    const response = await fetch('/public/posts.json');
+    const posts = await response.json();
+    return posts.map(post => parse(post.content));
 }
 
 export async function getAllPosts() {

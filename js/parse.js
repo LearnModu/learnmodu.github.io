@@ -15,8 +15,6 @@ export function parse(content) {
     };
 }
 
-import marked from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
-
 export function convertToHtml(content) {
     return marked.parse(content);
 }
