@@ -9,13 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	const currTheme = document.documentElement.getAttribute("data-theme");
 	const sun = document.querySelector('.sun');
 	const moon = document.querySelector('.moon');
+	const logoLight = document.querySelector('.logo-light');
+	const logoDark = document.querySelector('.logo-dark');
 
 	if (currTheme === "light") {
 		sun.style.display = "none";
 		moon.style.display = "block";
+		logoLight.style.display = "block";
+		logoDark.style.display = "none";
 	} if (currTheme === "dark") {
 		moon.style.display = "none";
 		sun.style.display = "block";
+		logoDark.style.display = "block";
+		logoLight.style.display = "none";
 	}
 
 	themeToggle.addEventListener("click", () => {
@@ -28,9 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (newTheme === "light") {
 			sun.style.display = "none";
 			moon.style.display = "block";
+			logoLight.style.display = "block";
+			logoDark.style.display = "none";
 		} else {
 			moon.style.display = "none";
 			sun.style.display = "block";
+			logoDark.style.display = "block";
+			logoLight.style.display = "none";
 		}
 	});
 });

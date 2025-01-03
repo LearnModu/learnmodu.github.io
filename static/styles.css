@@ -65,7 +65,7 @@ body {
 	list-style: none;
 }
 
-.logo {
+.logo-light, .logo-dark {
 	height: 40px;
 	background: linear-gradient(45deg, #B5F38F, #AFF9D6);
 	-webkit-background-clip: text;
