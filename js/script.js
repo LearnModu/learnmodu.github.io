@@ -24,7 +24,7 @@ export function convertToHtml(content) {
 
 // fetching
 export async function fetchPosts() {
-    const response = await fetch('/public/posts.json');
+    const response = await fetch('../public/posts.json');
     const posts = await response.json();
     return posts.map(post => parse(post.content));
 }
