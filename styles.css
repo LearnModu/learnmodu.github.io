@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Funnel Sans', sans-serif;
+}
+
+.nav {
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, 0.1);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 20px 30px;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+	z-index: 1000;
+}
+
+.nav-list {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+}
+
+.logo {
+	height: 40px;
+	background: linear-gradient(45deg, #B5F38F, #AFF9D6);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.nav-link {
+	color: #333;
+	text-decoration: none;
+	font-weight: 500;
+	transition: 0.3s;
+	font-size: 20px;
+}
+
+.nav-link:hover {
+	background: linear-gradient(45deg, #B5F38F, #AFF9D6);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.content {
+	padding: 100px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.section {
+	margin-bottom: 60px;
+	padding: 30px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.1);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
