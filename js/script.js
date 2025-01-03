@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { render } from "./render";
+
+document.addEventListener("DOMContentLoaded", async () => {
 	const themeToggle = document.querySelector('.theme-toggle');
 	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -43,4 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			logoLight.style.display = "none";
 		}
 	});
+
+	const recents = document.getElementById('recents');
+	if (recents) await renderPosts('recents', 4);
+	const blog = document.getElementById('blog-posts');
+	if (blog) await renderPosts('blog-posts');
 });

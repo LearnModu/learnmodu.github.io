@@ -1,5 +1,5 @@
 # Test post
-![banner](./banners/test.png)
+Image: ./banners/test.png
 Date: 2025-01-03
 Author: aquiffoo
 
