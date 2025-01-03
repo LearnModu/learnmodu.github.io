@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	});
 
 	const recents = document.getElementById('recents');
-	if (recents) await renderPosts('recents', 4);
+	if (recents) await render('recents', 4);
 	const blog = document.getElementById('blog-posts');
-	if (blog) await renderPosts('blog-posts');
+	if (blog) await render('blog-posts');
 });
