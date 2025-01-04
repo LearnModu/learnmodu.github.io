@@ -37,9 +37,9 @@ function renderPost(post, isGrid=false) {
 	const postLink = document.createElement('a');
 	postLink.href = `post.html?${post.id}`;
 	postLink.className = 'post-link';
-
+	let postImg = './public/posts/' + post.img;
 	postLink.innerHTML = `
-		<img src="./public/posts/${post.img}" alt="${post.title}" class="post-img">
+		<img src="./public/posts/${postImg}" alt="${post.title}" class="post-img">
 		<h2>${post.title}</h2>
 		<span class="date">${post.date}</span>
 		<span class="author">${post.author}</span>
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		moon.style.display = "block";
 		logoLight.style.display = "block";
 		logoDark.style.display = "none";
-	} if (currTheme === "dark") {
+	}  if (currTheme === "dark") {
 		moon.style.display = "none";
 		sun.style.display = "block";
 		logoDark.style.display = "block";
