@@ -46,6 +46,7 @@ function renderPost(post, isGrid=false) {
 		<h2>${post.title}</h2>
 		<span class="date">${post.date}</span>
 		<span class="author">${post.author}</span>
+		<br><br>
 	`;
 
 	article.appendChild(postLink);
