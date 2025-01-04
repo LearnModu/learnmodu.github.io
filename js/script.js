@@ -145,7 +145,7 @@ var postContentTag = document.getElementById("post-content");
 
 async function getPostData(id) {
 	const res = await fetch('../public/posts.json');
-	const posts = await res.json();
+	const posts = await JSON.parse(JSON.stringify(res.json()));
 	id -= 1;
 	const lines = posts[id]['content'].toString().split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
