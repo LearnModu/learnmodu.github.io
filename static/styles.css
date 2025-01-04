@@ -166,3 +166,14 @@ body {
 	text-decoration: none;
 	color: inherit;
 }
+
+.try-it {
+    background-color: #B5F38F; /* LearnModu  Green */
+      border: none;
+      color: #040f3de8;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+}
