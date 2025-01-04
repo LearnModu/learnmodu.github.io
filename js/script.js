@@ -135,6 +135,7 @@ const postId = Number(urlParams.get('id'));
 
 addEventListener("load", (event) => {
 	getPostData(postId);
+	console.log(postId);
 });
 
 var postTitleTag = document.getElementById("postTitle");
