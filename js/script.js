@@ -39,7 +39,7 @@ function renderPost(post, isGrid=false) {
 	postLink.className = 'post-link';
 
 	postLink.innerHTML = `
-		<img src="${post.img}" alt="${post.title}" class="post-img">
+		<img src="./public/posts/${post.img}" alt="${post.title}" class="post-img">
 		<h2>${post.title}</h2>
 		<span class="date">${post.date}</span>
 		<span class="author">${post.author}</span>
