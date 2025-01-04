@@ -5,9 +5,10 @@ function parse(content) {
 	const lines = content.split('\n');
 	const title = lines[0].replace('#', '').trim();
 	const img = lines[1].replace('Image: ', '').trim();
-	const date = lines[2].replace('Date: ', '').trim();
-	const author = lines[3].replace('Author: ', '').trim();
-	const body = lines.slice(4).join('\n');
+	const date = lines[3].replace('Date: ', '').trim();
+	const author = lines[4].replace('Author: ', '').trim();
+	const body = lines.slice(5).join('\n');
+	const id = Number(lines[2].replace('ID: ', '').trim());
 
 	return {
 		title,
@@ -15,6 +16,7 @@ function parse(content) {
 		date,
 		author,
 		body,
+		id
 	};
 }
 

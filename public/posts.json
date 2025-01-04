@@ -1,6 +1,6 @@
 [
   {
     "filename": "test.md",
-    "content": "# Test post\r\nImage: ./banners/test.png\r\nDate: 2025-01-03\r\nAuthor: aquiffoo\r\n\r\nThis is just a test post to see if the JS backend works properly on parsing the Markdown to HTML and then rendering it.\r\n## Section 1\r\nThat's a section, goddamn!\r\n## Section 2\r\nAnother section"
+    "content": "# Test post\r\nImage: ./banners/test.png\r\nID: 1\r\nDate: 2025-01-03\r\nAuthor: aquiffoo\r\n\r\nThis is just a test post to see if the JS backend works properly on parsing the Markdown to HTML and then rendering it.\r\n## Section 1\r\nThat's a section, goddamn!\r\n## Section 2\r\nAnother section"
   }
 ]
