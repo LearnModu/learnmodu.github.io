@@ -148,17 +148,20 @@ async function getPostData(id) {
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
 	const mp = JSON.parse(JSON.stringify(p));
-	//id -= 1;
-
-	const post = mp.find(post => post.id === id);
-	if (!post) return
 	
-	postTitleTag.innerHTML = mp[id]['title'];
-	postImgTag.src = './public/posts/' + mp[id]['img'];
-	postImgTag.alt = mp[id]['title'];
-	postDateTag.innerHTML = mp[id]['date'];
-	postAuthorTag.innerHTML = mp[id]['author'];
-	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(mp[id]['body'].toString()));
+	//id -= 1;
+	const post = mp.find(p => p.id.toString())
+	if (!post) {
+		console.log(`Post of id ${id} not found`);
+		return;
+	}
+
+	postTitleTag.innerHTML = post.title;
+	postImgTag.src = './public/posts/' + post.img;
+	postImgTag.alt = post.title;
+	postDateTag.innerHTML = post.date;
+	postAuthorTag.innerHTML = post.author;
+	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(post.body.toString()));
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
