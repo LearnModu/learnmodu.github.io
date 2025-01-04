@@ -153,6 +153,7 @@ async function getPostData(id) {
 	id -= 1;
 	postTitleTag.innerHTML = mp[id]['title'];
 	postImgTag.src = './public/posts/' + mp[id]['img'];
+	postImgTag.alt = mp[id]['title'];
 	postDateTag.innerHTML = mp[id]['date'];
 	postAuthorTag.innerHTML = mp[id]['author'];
 	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(mp[id]['body'].toString()));
