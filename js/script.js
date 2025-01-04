@@ -151,12 +151,11 @@ async function getPostData(id) {
 	console.log(p);
 	console.log(mp);
 	id -= 1;
-	const lines = mp[id]['content'].split('\n');
-	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
-	postImgTag.src = lines[1].replace('Image: ', '').trim();
-	postDateTag.innerHTML = lines[3].replace('Date: ', '').trim();
-	postAuthorTag = lines[4].replace('Author: ', '').trim();
-	postContentTag = lines.slice(5).join('\n');
+	postTitleTag.innerHTML = mp[id]['title'];
+	postImgTag.src = mp[id]['image'];
+	postDateTag.innerHTML = mp[id]['date'];
+	postAuthorTag = mp[id]['author'];
+	postContentTag = mp[id]['body'];
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
