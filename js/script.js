@@ -1,7 +1,7 @@
 // parsing
 const marked = window.marked;
 
-export function parse(content) {
+function parse(content) {
     const lines = content.split('\n');
     const title = lines[0].replace('#', '').trim();
     const img = lines[1].replace('Image: ', '').trim();
@@ -18,12 +18,12 @@ export function parse(content) {
     };
 }
 
-export function convertToHtml(content) {
+function convertToHtml(content) {
     return marked.parse(content);
 }
 
 // fetching
-export async function fetchPosts() {
+async function fetchPosts() {
     const response = await fetch('../public/posts.json');
     const posts = await response.json();
     return posts.map(post => parse(post.content));
