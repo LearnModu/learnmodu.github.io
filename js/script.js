@@ -129,6 +129,32 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const postId = Number(urlParams.get('id'));
+
+addEventListener("load", (event) => {
+	getPostData(postId);
+});
+
+var postTitleTag = document.getElementById("postTitle");
+var postImgTag = document.getElementById("post-img");
+var postDateTag = document.getElementById("date");
+var postAuthorTag = document.getElementById("author");
+var postContentTag = document.getElementById("post-content");
+
+async function getPostData(id) {
+	const res = await fetch('../public/posts.json');
+	const posts = await res.json();
+	id -= 1;
+	const lines = posts[id]['content'].toString().split('\n');
+	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
+	postImgTag.innerHTML = lines[1].replace('Image: ', '').trim();
+	postDateTag.innerHTML = lines[3].replace('Date: ', '').trim();
+	postAuthorTag.innerHTML = lines[4].replace('Author: ', '').trim();
+	postContentTag.innerHTML = lines.slice(5).join('\n');
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	const themeToggle = document.querySelector('.theme-toggle');
 	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
