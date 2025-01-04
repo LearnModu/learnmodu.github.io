@@ -150,7 +150,7 @@ async function getPostData(id) {
 	const mp = JSON.parse(JSON.stringify(p));
 	
 	//id -= 1;
-	const post = mp.find(p => p.id.toString())
+	const post = mp.find(p => p.id === id);
 	if (!post) {
 		console.log(`Post of id ${id} not found`);
 		return;
