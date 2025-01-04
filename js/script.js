@@ -153,7 +153,7 @@ async function getPostData(id) {
 	postImgTag.src = lines[1].replace('Image: ', '').trim();
 	postDateTag.innerHTML = lines[3].replace('Date: ', '').trim();
 	postAuthorTag = lines[4].replace('Author: ', '').trim();
-	postContentTag = lines.slice(5).join('\n')';
+	postContentTag = lines.slice(5).join('\n');
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
