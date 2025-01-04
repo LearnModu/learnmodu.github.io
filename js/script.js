@@ -21,7 +21,7 @@ function parse(content) {
 }
 
 function convertToHtml(content) {
-	return marked.parse(content);
+	return DOMPurify.sanitize(marked.parse(content));
 }
 
 // fetching
@@ -155,7 +155,7 @@ async function getPostData(id) {
 	postImgTag.src = './public/posts/' + mp[id]['img'];
 	postDateTag.innerHTML = mp[id]['date'];
 	postAuthorTag.innerHTML = mp[id]['author'];
-	postContentTag.innerHTML = mp[id]['body'];
+	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(mp[id]['body'].toString()));
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
