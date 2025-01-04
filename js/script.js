@@ -145,7 +145,7 @@ var postContentTag = document.getElementById("post-content");
 
 function getPostData(id) {
 	// const res = await fetch('../public/posts.json');
-	const posts = JSON.parse(JSON.stringify($.getJSON('../public/posts.json')));
+	const posts = $.getJSON('../public/posts.json');
 	id -= 1;
 	console.log(posts);
 	const lines = posts[id]['content'].toString().split('\n');
