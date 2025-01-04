@@ -147,6 +147,7 @@ function getPostData(id) {
 	// const res = await fetch('../public/posts.json');
 	const posts = JSON.parse(JSON.stringify($.getJSON('../public/posts.json')));
 	id -= 1;
+	console.log(posts);
 	const lines = posts[id]['content'].toString().split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
 	postImgTag.innerHTML = lines[1].replace('Image: ', '').trim();
