@@ -143,9 +143,9 @@ var postDateTag = document.getElementById("date");
 var postAuthorTag = document.getElementById("author");
 var postContentTag = document.getElementById("post-content");
 
-async function getPostData(id) {
-	const res = await fetch('../public/posts.json');
-	const posts = await JSON.parse(JSON.stringify(res.json()));
+function getPostData(id) {
+	// const res = await fetch('../public/posts.json');
+	const posts = JSON.parse(JSON.stringify($.getJSON('../public/posts.json')));
 	id -= 1;
 	const lines = posts[id]['content'].toString().split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
