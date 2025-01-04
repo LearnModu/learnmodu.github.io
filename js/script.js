@@ -60,7 +60,7 @@ async function render(cId, limit=null) {
 
 	container.innerHTML = '';
 	if (cId === 'recents') toRender.forEach(post => container.appendChild(renderPost(post, true)));
-	toRender.forEach(post => container.appendChild(renderPost(post, cId === 'recents')));
+	// toRender.forEach(post => container.appendChild(renderPost(post, cId === 'recents'))); <-- why was this extra line of code even there lmao (computerblade-official ADDED)
 	window.addEventListener('hashchange', handleRoute);
 	handleRoute();
 }
