@@ -38,7 +38,7 @@ function renderPost(post, isGrid=false) {
 	postLink.href = `post.html?${post.id}`;
 	postLink.className = 'post-link';
 	let postImg = './public/posts/' + post.img;
-	console.log(postImg);
+	// console.log(postImg); <-- this was used for debugging (computerblade-official ADDED)
 	postLink.innerHTML = `
 		<img src="${postImg}" alt="${post.title}" class="post-img">
 		<h2>${post.title}</h2>
