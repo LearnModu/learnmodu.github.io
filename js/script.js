@@ -59,8 +59,8 @@ async function render(cId, limit=null) {
 	const toRender = limit ? sorted.slice(0, limit) : sorted;
 
 	container.innerHTML = '';
-	if (cId === 'recents') toRender.forEach(post => container.appendChild(renderPost(post, true)));
-	toRender.forEach(post => container.appendChild(renderPost(post, cId === 'recents')));
+	if (cId === 'recents' || cId === 'blog-posts') toRender.forEach(post => container.appendChild(renderPost(post, true)));
+	// toRender.forEach(post => container.appendChild(renderPost(post, cId === 'recents')));
 	window.addEventListener('hashchange', handleRoute);
 	handleRoute();
 }
