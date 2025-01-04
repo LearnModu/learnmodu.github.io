@@ -148,6 +148,8 @@ async function getPostData(id) {
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
 	const mp = JSON.parse(JSON.stringify(p));
+	console.log(p);
+	console.log(mp);
 	id -= 1;
 	const lines = mp[id]['content'].split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
