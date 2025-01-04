@@ -59,7 +59,7 @@ async function render(cId, limit=null) {
 	const toRender = limit ? sorted.slice(0, limit) : sorted;
 
 	container.innerHTML = '';
-	if (cId === 'recents') toRender.forEach(post => container.appendChild(renderPost(post, true)));
+	if (cId === 'recents' || cId === 'blog-posts') toRender.forEach(post => container.appendChild(renderPost(post, true)));
 	// toRender.forEach(post => container.appendChild(renderPost(post, cId === 'recents'))); <-- why was this extra line of code even there lmao (computerblade-official ADDED)
 	window.addEventListener('hashchange', handleRoute);
 	handleRoute();
@@ -148,10 +148,10 @@ async function getPostData(id) {
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
 	const mp = JSON.parse(JSON.stringify(p));
-	//id -= 1;
+	id -= 1; // <-- temporarily added
 
-	const post = mp.find(post => post.id === id);
-	if (!post) return
+	// const post = mp.find(post => post.id === id);
+	// if (!post) return <-- temporarily removed for debugging
 	
 	postTitleTag.innerHTML = mp[id]['title'];
 	postImgTag.src = './public/posts/' + mp[id]['img'];
