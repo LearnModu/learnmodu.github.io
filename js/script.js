@@ -144,19 +144,27 @@ var postDateTag = document.getElementById("date");
 var postAuthorTag = document.getElementById("author");
 var postContentTag = document.getElementById("post-content");
 
+
+// DO NOT TOUCH
 async function getPostData(id) {
 	const resp = await fetch('../public/posts.json');
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
-	const mp = JSON.parse(JSON.stringify(p));
+	// const mp = JSON.parse(JSON.stringify(p));
 	id -= 1;
-	
-	postTitleTag.innerHTML = mp[id]['title'];
-	postImgTag.src = './public/posts/' + mp[id]['img'];
-	postImgTag.alt = mp[id]['title'];
-	postDateTag.innerHTML = mp[id]['date'];
-	postAuthorTag.innerHTML = mp[id]['author'];
-	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(mp[id]['body'].toString()));
+	const lines = posts[id]['content'] .split('\n');
+	const title = lines[0].replace('#', '').trim();
+	const img = lines[1].replace('Image: ', '').trim();
+	const date = lines[3].replace('Date: ', '').trim();
+	const author = lines[4].replace('Author: ', '').trim();
+	const body = lines.slice(5).join('\n');
+	const id = Number(lines[2].replace('ID: ', '').trim());
+	postTitleTag.innerHTML = title;
+	postImgTag.src = './public/posts/' + img;
+	postImgTag.alt = title;
+	postDateTag.innerHTML = date;
+	postAuthorTag.innerHTML = author;
+	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(body));
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
