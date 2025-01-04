@@ -147,7 +147,7 @@ async function getPostData(id) {
 	const resp = await fetch('../public/posts.json');
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
-	const mp = JSON.parse(p);
+	const mp = JSON.parse(JSON.stringify(p));
 	const lines = mp[id].split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
 	postImgTag.src = lines[1].replace('Image: ', '').trim();
