@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="./static/styles.css">
-	<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
-	<script src="./js/script.js"></script>
-	<link rel="icon" type="image/x-icon" href="./static/logo.png">
-	<title>LearnModu</title>
-</head>
-<body>
-	<script>
-if ( window !== window.parent ) 
-{
-      window.location.replace("anti-iframe.html");// The page is in an iframe
-}
-</script>
-	<nav class="nav">
-		<ul class="nav-list">
-			<li>
-				<img src="./static/animated-light.gif" alt="LearnModu" class="logo-light">
-				<img src="./static/animated-dark.gif" alt="LearnModu" class="logo-dark">
-			</li>
-			<li><a href="index.html#" class="nav-link">Home</a></li>
-			<li><a href="index.html#recent" class="nav-link">Recent Posts</a></li>
-			<li><a href="blog.html" class="nav-link">Blog</a></li>
-			<li><a href="index.html#about" class="nav-link">About</a></li>
-			<li><a href="https://www.cyteon.tech/modu/ide" class="nav-link">Web IDE</a></li>
-			<li><a href="search.html" class="nav-link">Search</a></li>
-			<li><button class="theme-toggle">
-				<svg class="sun" viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
-                <svg class="moon" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
-			</button></li>
-		</ul>
-	</nav>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./static/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
+    <script src="./js/script.js"></script>
+    <link rel="icon" type="image/x-icon" href="./static/logo.png" />
+    <title>LearnModu</title>
+  </head>
+  <body>
+    <script>
+      if (window !== window.parent) {
+        window.location.replace("anti-iframe.html"); // The page is in an iframe
+      }
+    </script>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li>
+          <a href="index.html"
+            ><img
+              src="./static/animated-light.gif"
+              alt="LearnModu"
+              class="logo-light"
+          /></a>
 
-	<main class="content">
-		<section id="404" class="section">
-			<h2>Error 404; page not found</h2>
-			<br>
-			<a href="index.html">
-       			 <button>Go Home</button>
-      			</a>
-		</section>
+          <a href="index.html"
+            ><img
+              src="./static/animated-dark.gif"
+              alt="LearnModu"
+              class="logo-dark"
+          /></a>
+        </li>
+        <li><a href="index.html#" class="nav-link">Home</a></li>
+        <li><a href="index.html#recent" class="nav-link">Recent Posts</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li>
+          <a href="https://www.cyteon.tech/modu/ide" class="nav-link"
+            >Web IDE</a
+          >
+        </li>
+        <li><a href="search.html" class="nav-link">Search</a></li>
+        <li>
+          <button class="theme-toggle">
+            <svg class="sun" viewBox="0 0 24 24">
+              <path
+                d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+              />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24">
+              <path
+                d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
 
-	</main>
-</body>
+    <main class="content">
+      <section id="404" class="section">
+        <h2>Error 404; page not found</h2>
+        <br />
+        <a href="index.html">
+          <button>Go Home</button>
+        </a>
+      </section>
+    </main>
+  </body>
 </html>
