@@ -149,10 +149,7 @@ async function getPostData(id) {
 	const posts = await resp.json();
 	const p = posts.map(post => parse(post.content));
 	const mp = JSON.parse(JSON.stringify(p));
-	id -= 1; // <-- temporarily added
-
-	// const post = mp.find(post => post.id === id);
-	// if (!post) return <-- temporarily removed for debugging
+	id -= mp.find(post => post.id === id); // <-- temporarily added
 	
 	postTitleTag.innerHTML = mp[id]['title'];
 	postImgTag.src = './public/posts/' + mp[id]['img'];
