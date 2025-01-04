@@ -149,7 +149,7 @@ async function getPostData(id) {
 	const p = posts.map(post => parse(post.content));
 	const mp = JSON.parse(JSON.stringify(p));
 	id -= 1;
-	const lines = mp[id].split('\n');
+	const lines = mp[id]['content'].split('\n');
 	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
 	postImgTag.src = lines[1].replace('Image: ', '').trim();
 	postDateTag.innerHTML = lines[3].replace('Date: ', '').trim();
