@@ -152,10 +152,10 @@ async function getPostData(id) {
 	console.log(mp);
 	id -= 1;
 	postTitleTag.innerHTML = mp[id]['title'];
-	postImgTag.src = mp[id]['image'];
+	postImgTag.src = mp[id]['img'];
 	postDateTag.innerHTML = mp[id]['date'];
-	postAuthorTag = mp[id]['author'];
-	postContentTag = mp[id]['body'];
+	postAuthorTag.innerHTML = mp[id]['author'];
+	postContentTag.innerHTML = mp[id]['body'];
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
