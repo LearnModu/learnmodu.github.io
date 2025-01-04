@@ -158,7 +158,7 @@ async function getPostData(id) {
 	const date = lines[3].replace('Date: ', '').trim();
 	const author = lines[4].replace('Author: ', '').trim();
 	const body = lines.slice(5).join('\n');
-	const id = Number(lines[2].replace('ID: ', '').trim());
+	// const bid = Number(lines[2].replace('ID: ', '').trim());
 	postTitleTag.innerHTML = title;
 	postImgTag.src = './public/posts/' + img;
 	postImgTag.alt = title;
