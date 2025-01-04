@@ -32,7 +32,7 @@ async function fetchPosts() {
 //rendering
 async function render(cId, limit=null) {
     const container = document.getElementById(cId);
-    const posts = await getAllPosts();
+    const posts = await fetchPosts();
     const sorted = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
     const toRender = limit ? sorted.slice(0, limit) : sorted;
 
