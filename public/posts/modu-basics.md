@@ -1,5 +1,6 @@
 # Learn the basics of Modu in a single post
 Image: ./banners/modu-basics.png
+ID: 2
 Date: 2025-01-04
 Author: aquiffoo
 

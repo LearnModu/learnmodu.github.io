@@ -1,5 +1,6 @@
 # Test post
 Image: ./banners/test.png
+ID: 1
 Date: 2025-01-03
 Author: aquiffoo
 
