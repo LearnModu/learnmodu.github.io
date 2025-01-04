@@ -152,7 +152,7 @@ async function getPostData(id) {
 	console.log(mp);
 	id -= 1;
 	postTitleTag.innerHTML = mp[id]['title'];
-	postImgTag.src = mp[id]['img'];
+	postImgTag.src = './public/posts/' + mp[id]['img'];
 	postDateTag.innerHTML = mp[id]['date'];
 	postAuthorTag.innerHTML = mp[id]['author'];
 	postContentTag.innerHTML = mp[id]['body'];
