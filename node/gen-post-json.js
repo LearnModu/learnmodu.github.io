@@ -17,4 +17,4 @@ const posts = files
 	.filter(f => f.endsWith('.md'))
 	.map(readPost);
 fs.writeFileSync(output, JSON.stringify(posts, null, 2));
-console.log(`Generated ${posts.length} new posts`);
+console.log(`Wrote ${posts.length} posts to posts.json`);
