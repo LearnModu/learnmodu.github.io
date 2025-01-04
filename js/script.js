@@ -143,17 +143,11 @@ var postDateTag = document.getElementById("date");
 var postAuthorTag = document.getElementById("author");
 var postContentTag = document.getElementById("post-content");
 
-function getPostData(id) {
-	// const res = await fetch('../public/posts.json');
-	const posts = $.parseJSON($.getJSON('../public/posts.json'));
-	id -= 1;
-	console.log(posts);
-	const lines = posts[id]['content'].toString().split('\n');
-	postTitleTag.innerHTML = lines[0].replace('#', '').trim();
-	postImgTag.innerHTML = lines[1].replace('Image: ', '').trim();
-	postDateTag.innerHTML = lines[3].replace('Date: ', '').trim();
-	postAuthorTag.innerHTML = lines[4].replace('Author: ', '').trim();
-	postContentTag.innerHTML = lines.slice(5).join('\n');
+async function getPostData(id) {
+	const response = await fetch('../public/posts.json');
+	const posts = await response.json();
+	const p = posts.map(post => parse(post.content));
+	console.log(p);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
