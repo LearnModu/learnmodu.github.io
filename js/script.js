@@ -37,7 +37,7 @@ function renderPost(post, isGrid=false) {
 	article.className = isGrid ? 'post-grid' : 'post';
 
 	const postLink = document.createElement('a');
-	postLink.href = `post.html?${post.id}`;
+	postLink.href = `post.html?id=${post.id}`;
 	postLink.className = 'post-link';
 	let postImg = './public/posts/' + post.img;
 	// console.log(postImg); <-- this was used for debugging (computerblade-official ADDED)
