@@ -1,5 +1,5 @@
 # Make your own Terminal (with Modu v0.5.0!)
-Image: ./banners/modu-basics.png
+Image: ./banners/blank.png
 ID: 3
 Date: 2025-01-04
 Author: paintdev (404PageN0tFound)
