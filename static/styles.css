@@ -109,7 +109,7 @@ body {
 }
 
 .posts-grid {
-	display: grid;
+	display: grid !important;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 2rem;
 	margin-top: 2rem;
