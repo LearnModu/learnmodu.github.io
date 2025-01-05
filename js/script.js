@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const recents = document.getElementById('recents');
 	if (recents) await render('recents', 4);
 	const blog = document.getElementById('blog-posts');
-	if (blog) await render('blog-posts');
+	if (blog) await render('blog-posts', 4);
 
 	handleRoute();
 });
