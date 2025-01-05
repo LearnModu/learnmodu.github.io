@@ -165,6 +165,67 @@ async function getPostData(id) {
 	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(post.body.toString()));
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+	const chatMessages = document.getElementById('chat-messages');
+	const userInput = document.getElementById('user-input');
+	const sendButton = document.getElementById('send-button');
+
+	let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+
+	async function sendMessage(message) {
+		try {
+			const response = await fetch("https://moduassist.ploszukiwacz.hackclub.app/api/chat", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				mode: 'cors',
+				credentials: 'same-origin',
+				body: JSON.stringify({ message })
+			});
+			const data = await response.json();
+			return data.response;
+		} catch (error) {
+			console.error('Error:', error);
+			return 'Our server is currently down. Please try again later.';
+		}
+	}
+
+	function addMessage(content, isUser) {
+		const messageDiv = document.createElement('div');
+		messageDiv.className = isUser ? 'user-message' : 'ai-message';
+		messageDiv.innerHTML = marked.parse(content);
+		chatMessages.appendChild(messageDiv);
+		chatMessages.scrollTop = chatMessages.scrollHeight;
+	}
+
+	async function handleSend() {
+		const message = userInput.value.trim();
+		if (!message) return;
+
+		addMessage(message, true);
+		userInput.value = '';
+
+		const loadingMessage = document.createElement('div');
+		loadingMessage.className = 'ai-message loading';
+		loadingMessage.textContent = '...';
+		chatMessages.appendChild(loadingMessage);
+
+		const response = await sendMessage(message);
+		chatMessages.removeChild(loadingMessage);
+		addMessage(response, false);
+	}
+
+	sendButton.addEventListener('click', handleSend);
+	userInput.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter' && !e.shiftKey) {
+			e.preventDefault();
+			handleSend();
+		}
+	});
+});
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 	const themeToggle = document.querySelector('.theme-toggle');
 	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");

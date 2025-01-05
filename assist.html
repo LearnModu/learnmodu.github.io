@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./static/styles.css" />
+    <link rel="stylesheet" href="./static/assist.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
@@ -34,16 +35,16 @@
               class="logo-dark"
           /></a>
         </li>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="index.html#recent" class="nav-link">Recent Posts</a></li>
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#recent" class="nav-link">Recent Posts</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="index.html#about" class="nav-link">About</a></li>
-        <li><a href="assist.html" class="nav-link">ModuAssist</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
         <li>
           <a href="https://www.cyteon.tech/modu/ide" class="nav-link"
             >Web IDE</a
           >
         </li>
+        <li><a href="assist.html" class="nav-link">ModuAssist</a></li>
         <li><a href="search.html" class="nav-link">Search</a></li>
         <li>
           <button class="theme-toggle">
@@ -61,22 +62,18 @@
         </li>
       </ul>
     </nav>
-
     <main class="content">
-      <section id="recent" class="section">
-        <h2>Recent Posts</h2>
-        <div id="recents" class="posts-grid"></div>
-      </section>
-
-      <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>
-          We are just a passionate team about Modu, so we decided to make this
-          website for people to have a seamless experience with the language.
-        </p>
-      </section>
+    <section class="section">
+        <h1>ModuAssist <img src="static/ai-logo.png" width="20px"></h1>
+        <br>
+        <div id="chat-container" style="height: 600px; overflow-y: auto; margin-bottom: 20px; padding: 20px; background: var(--sect-bg); border-radius: 12px; scrollbar-width: none;">
+            <div id="chat-messages"></div>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <textarea id="user-input" placeholder="Ask ModuAssist anything..." style="width: 90%; padding: 10px; border-radius: 8px; border: 1px solid var(--nav-bg); background: var(--sect-bg); color: var(--text); resize: none;"></textarea>
+            <button id="send-button" style="border-radius: 8px; background-color: var(--nav-bg); color: #ddd; cursor: pointer; border: 1px solid var(--nav-bg)" class="try-it">Send</button>
+        </div>
+    </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-  </body>
+</body>
 </html>
