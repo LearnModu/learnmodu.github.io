@@ -1,5 +1,6 @@
 body {
-	overflow-y: hidden;
+	overflow-y: auto;
+	scrollbar-width: 0;
 }
 
 .user-message, .ai-message {
