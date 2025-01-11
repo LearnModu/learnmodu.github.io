@@ -180,3 +180,19 @@ body {
      display: inline-block;
      font-size: 16px;
 }
+
+
+.gsc-control-cse {
+	border-radius: 20px;
+	padding: 10px 15px;
+}
+
+button.gsc-search-button {
+	border-radius: 15px;
+	padding: 8px 30px;
+}
+
+.gsc-input-box {
+	border-radius: 15px;
+}
+
