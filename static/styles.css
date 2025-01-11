@@ -118,6 +118,11 @@ body {
 	margin-top: 2rem;
 }
 
+article.posts-grid {
+	width: 100%;
+	display: inherit	;
+}
+
 .posts-list {
 	display: flex;
 	flex-direction: column;
@@ -130,6 +135,7 @@ body {
 	border-radius: 12px;
 	padding: 1.5rem;
 	transition: transform 0.2s;
+	width: 100%;
 }
 
 .post:hover {
@@ -170,13 +176,40 @@ body {
 	color: inherit;
 }
 
+.back-link:hover {
+	color: #B5F38F;
+}
+
 .try-it {
     background-color: #B5F38F; /* LearnModu  Green */
       border: none;
       color: #040f3de8;
-      padding: 15px 32px;
+      padding: 15px 24px;
       text-align: center;
       text-decoration: none;
      display: inline-block;
      font-size: 16px;
+	 border-radius: 13px;
+	 transition: all 0.3s ease;
 }
+
+.try-it:hover {
+	background-color: #AFF9D6; /* LearnModu  Green */
+	  color: #040f3de8;
+	  transform: scale(1.1);
+}
+
+.gsc-control-cse {
+	border-radius: 20px;
+	padding: 10px 15px;
+}
+
+button.gsc-search-button {
+	border-radius: 15px;
+	padding: 8px 30px;
+}
+
+.gsc-input-box {
+	border-radius: 15px;
+}
+
