@@ -12,7 +12,7 @@ Here you could take two different paths:
 ### 1. Through Cargo
 1. First, i'd recommend you [install Rust](https://www.rust-lang.org/tools/install) (it's what Modu was made with and comes with Cargo, the main source for installing it)
 2. Check if cargo is installed by running `cargo --version`:\
-![In my case, it is.](./assets/screenshot-cargo-version.png)
+![In my case, it is.](./public/posts/assets/screenshot-cargo-version.png)
 3. Now that you have cargo up and running, run `cargo +nightly install modu` to get Modu installed on your machine.
 4. Check if it's up and running with `modu`
 Obs. IF YOU ARE USING VSCODE, you can download the [extension on GitHub](https://github.com/Cyteon/modu/blob/main/extensions/vscode/modu-lang-0.0.1.vsix)
