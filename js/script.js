@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return data.response;
 		} catch (error) {
 			console.error('Error:', error);
-			return 'Our server is currently down. Please try again later.';
+			return 'We are working on enhancing the servers. Check back later.';
 		}
 	}
 
