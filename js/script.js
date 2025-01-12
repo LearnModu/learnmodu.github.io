@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	async function sendMessage(message) {
 		try {
-			const response = await fetch("https://moduassist.ploszukiwacz.hackclub.app/api/chat", {
+			const response = await fetch("https://example.com"), {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
