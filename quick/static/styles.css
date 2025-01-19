@@ -190,3 +190,11 @@ button.gsc-search-button {
 
 .gsc-input-box {
 }
+
+.date {
+	color: var(--text);
+	text-decoration: none;
+	font-weight: 500;
+	transition: 0.3s;
+	font-size: 20px;
+}
