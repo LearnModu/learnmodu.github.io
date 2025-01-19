@@ -34,7 +34,7 @@ async function fetchPosts() {
 //rendering
 function renderPost(post, isGrid=false) {
 	const article = document.createElement('article');
-	article.className = isGrid ? 'post-grid' : 'post';
+	article.className = isGrid ? 'post-grid post-w' : 'post';
 
 	const postLink = document.createElement('a');
 	postLink.href = `post.html?id=${post.id}`;
@@ -165,64 +165,65 @@ async function getPostData(id) {
 	postContentTag.innerHTML = DOMPurify.sanitize(marked.parse(post.body.toString()));
 }
 
+// modu assist
 document.addEventListener('DOMContentLoaded', () => {
-	const chatMessages = document.getElementById('chat-messages');
-	const userInput = document.getElementById('user-input');
-	const sendButton = document.getElementById('send-button');
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
 
-	let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+    let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
 
-	async function sendMessage(message) {
-		try {
-			const response = await fetch("https://example.com", {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				mode: 'cors',
-				credentials: 'same-origin',
-				body: JSON.stringify({ message })
-			});
-			const data = await response.json();
-			return data.response;
-		} catch (error) {
-			console.error('Error:', error);
-			return 'We are working on enhancing the servers. Check back later.';
-		}
-	}
+    async function sendMessage(message) {
+        try {
+            const response = await fetch("https://example.com", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'cors',
+                credentials: 'same-origin',
+                body: JSON.stringify({ message })
+            });
+            const data = await response.json();
+            return data.response;
+        } catch (error) {
+            console.error('Error:', error);
+            return 'We are working on enhancing the servers. Check back later.';
+        }
+    }
 
-	function addMessage(content, isUser) {
-		const messageDiv = document.createElement('div');
-		messageDiv.className = isUser ? 'user-message' : 'ai-message';
-		messageDiv.innerHTML = marked.parse(content);
-		chatMessages.appendChild(messageDiv);
-		chatMessages.scrollTop = chatMessages.scrollHeight;
-	}
+    function addMessage(content, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = isUser ? 'user-message' : 'ai-message';
+        messageDiv.innerHTML = marked.parse(content);
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-	async function handleSend() {
-		const message = userInput.value.trim();
-		if (!message) return;
+    async function handleSend() {
+        const message = userInput.value.trim();
+        if (!message) return;
 
-		addMessage(message, true);
-		userInput.value = '';
+        addMessage(message, true);
+        userInput.value = '';
 
-		const loadingMessage = document.createElement('div');
-		loadingMessage.className = 'ai-message loading';
-		loadingMessage.textContent = '...';
-		chatMessages.appendChild(loadingMessage);
+        const loadingMessage = document.createElement('div');
+        loadingMessage.className = 'ai-message loading';
+        loadingMessage.textContent = '...';
+        chatMessages.appendChild(loadingMessage);
 
-		const response = await sendMessage(message);
-		chatMessages.removeChild(loadingMessage);
-		addMessage(response, false);
-	}
+        const response = await sendMessage(message);
+        chatMessages.removeChild(loadingMessage);
+        addMessage(response, false);
+    }
 
-	sendButton.addEventListener('click', handleSend);
-	userInput.addEventListener('keypress', (e) => {
-		if (e.key === 'Enter' && !e.shiftKey) {
-			e.preventDefault();
-			handleSend();
-		}
-	});
+    sendButton.addEventListener('click', handleSend);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSend();
+        }
+    });
 });
 
 
@@ -237,19 +238,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const currTheme = document.documentElement.getAttribute("data-theme");
 	const sun = document.querySelector('.sun');
 	const moon = document.querySelector('.moon');
-	const logoLight = document.querySelector('.logo-light');
-	const logoDark = document.querySelector('.logo-dark');
 
 	if (currTheme === "light") {
 		sun.style.display = "none";
 		moon.style.display = "block";
-		logoLight.style.display = "block";
-		logoDark.style.display = "none";
 	}  if (currTheme === "dark") {
 		moon.style.display = "none";
 		sun.style.display = "block";
-		logoDark.style.display = "block";
-		logoLight.style.display = "none";
 	}
 
 	themeToggle.addEventListener("click", () => {
@@ -262,13 +257,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 		if (newTheme === "light") {
 			sun.style.display = "none";
 			moon.style.display = "block";
-			logoLight.style.display = "block";
-			logoDark.style.display = "none";
 		} else {
 			moon.style.display = "none";
 			sun.style.display = "block";
-			logoDark.style.display = "block";
-			logoLight.style.display = "none";
 		}
 	});
 
@@ -279,3 +270,39 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	handleRoute();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const menuToggle = document.querySelector('.menu-toggle');
+	const navList = document.querySelector('.mobile-menu');
+	const mobileOverlay = document.querySelector('.mobile-overlay');
+  
+	menuToggle.addEventListener('click', () => {
+	  navList.style.display = 'flex';
+	  mobileOverlay.style.display = 'block';
+	});
+  
+	mobileOverlay.addEventListener('click', () => {
+	  navList.style.display = 'none';
+	  mobileOverlay.style.display = 'none';
+	});
+  });
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const logoImg = document.querySelector(".logo");
+ 
+    function getRandomRotation(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function applyRandomRotation() {
+
+      const rotationX = getRandomRotation(-30, 30);
+      const rotationY = getRandomRotation(-30, 30);
+
+      logoImg.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    }
+  
+    setInterval(applyRandomRotation, 1500); 
+  });
+

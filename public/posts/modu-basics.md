@@ -26,7 +26,7 @@ By doing this approach, Rust is not necessary. However, to update it, you have t
 ## Input/Output
 Modu's syntax was designed for being simple, reliable and keeping you focused on writing code, instead of arguing with your compiler. (i'm looking at you, Rust!)\
 To make a simple Hello World program, you don't even need a main function, like in Go or Kotlin:
-```rs
+```rust
 // this is a comment, the interpreter does not treat them as code
 print("Hello, World!"); //semicolons are optional too fyi!
 ```
@@ -51,7 +51,7 @@ Declare and modify variables using the `let` keyword in front of the variable's 
 
 ## If statements
 You can check if a condition is true using `if` statements. Start with `if`, then a boolean condition, like `3 == 1 + 2` or `4 != 2 * 2`
-```rs
+```rust
 let a = 3;
 let b = 4;
 
@@ -67,7 +67,7 @@ Notice that we also used concatenation on the `print` function, that supports mu
 
 ## Custom Functions
 You can declare functions, blocks of code that can be called repeatedly to run a specific action, using the `fn` keyword.
-```rs
+```rust
 fn wave(person) {
     print("Hello, ", person, "!")
 }
@@ -79,7 +79,7 @@ The function `wave()` does a specific action, use the console to greet the user,
 
 ## Import statements
 You can import libraries to Modu to increase its functionality. You use the `import` statement on the top of your program to include the lib's functions and variables:
-```rs
+```rust
 import "math" as m
 import "os" as os
 import "file" as * //does not require calling library "file" for accessing its functions
@@ -92,7 +92,7 @@ Current libraries include:
 ### You can import your own files too
 We can create a file `something.modu` and import it to another, `main.modu`.\
 something.modu:
-```rs
+```rust
 import "os" as os;
 
 fn doSomething() {
@@ -106,7 +106,7 @@ fn mkdir(dirname) {
 }
 ```
 main.modu:
-```rs
+```rust
 import "something.modu" as sm;
 
 let dir = input("Create a dir called: ");

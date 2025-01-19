@@ -1,0 +1,144 @@
+
+.user-message, .ai-message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    clear: both;
+}
+
+.user-message {
+    background-color: #00000042;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.section {
+    padding: 20px;
+}
+
+#chat-container {
+    height: 75%;
+    width: 100%;
+    min-width: 95%;
+    padding: 20px;
+    background: var(--sect-bg);
+    border-radius: 12px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: var(--sect-bg);
+    border-radius: 10px;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
+}
+
+#chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-radius: 4px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.Message {
+    width: 93%;
+    max-width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--bg-message);
+    transform: translate(0px, 0px);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .MsgInput {
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--bg-message);
+    border: none;
+    outline: none;
+    width: calc(100% - 60px);
+    height: 30px;
+    transform: translate(5px, -3px);
+    color: var(--text-message);
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .SendSVG {
+    width: 30px;
+    height: 30px;
+    border-width: 50px;
+    transform: translate(20px, 5px);
+    background-size: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 4px;
+    background-color: var(--bg-button-hover);
+  }
+  
+  .SendSVG:hover {
+    background-color: var(--bg-button-hover);
+  }
+
+  .moduassist-title {
+    margin: 10px;
+    font-size: 30px;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    #chat-container {
+        width: 95%;
+        height: 82%;
+        padding: 8px;
+    }
+
+    .Message {
+        height: auto;
+        font-size: 14px;
+    }
+
+    .moduassist-title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #chat-container {
+        max-width: 800px;
+    }
+}

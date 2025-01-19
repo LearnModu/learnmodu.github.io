@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./static//css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="./js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="icon" type="image/x-icon" href="./static//images/logo.png" />
     <title>LearnModu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <script>
       if (window !== window.parent) {
-        window.location.replace("anti-iframe.html"); // The page is in an iframe
+        window.location.replace("anti-iframe.html");
       }
     </script>
     <nav class="nav">
@@ -258,14 +261,61 @@
     </ul>
 
     <div class="mobile-overlay"></div>
-
+    
     <main class="content">
-      <section id="404" class="section">
-        <h2>Error 404; page not found</h2>
-        <p>The requested page was not found.</p>
-        <br />
-        <a href="index.html" class="try-it">Go Home</a>
+      <section id="about" class="section">
+        <h2>About Us</h2>
+        <div class="team-container">
+          <a href="https://www.cyteon.tech/" target="_blank" class="team-member-link">
+            <div class="team-member">
+                <img src="static/images/members/Cyteon.png" class="team-member-img">
+                <h3 class="team-member-name">Cyteon</h3>
+                <p class="team-member-role">The Creator Of Modu (fr)</p>
+                <p class="team-member-desc">The esteemed creator of Modu, a programming language and platform designed for learning and teaching programming.</p>
+            </div>
+          </a>  
+
+          <a href="https://computerblade.is-a.dev/" target="_blank" class="team-member-link">
+            <div class="team-member">
+                <img src="static/images/members/ComputerBlade.png" class="team-member-img">
+                <h3 class="team-member-name">ComputerBlade</h3>
+                <p class="team-member-role">Full-Stack Dev</p>
+                <p class="team-member-desc">Team member at LearnModu.</p>
+            </div>
+          </a>  
+        
+          <a href="https://aquiffoo.vercel.app" target="_blank" class="team-member-link">
+            <div class="team-member">
+                <img src="static/images/members/aquiffoo.png" class="team-member-img">
+                <h3 class="team-member-name">aquiffoo</h3>
+                <p class="team-member-role">Full-Stack Dev</p>
+                <p class="team-member-desc">A capybara who also happens to be a competent fullstack developer</p>
+            </div>
+          </a> 
+        
+          <a href="https://mateishome.page" target="_blank" class="team-member-link">
+            <div class="team-member">
+                <img src="static/images/members/MateisHomePage.png" class="team-member-img">
+                <h3 class="team-member-name">MateisHomePage</h3>
+                <p class="team-member-role">php lover && javascript hater</p>
+                <p class="team-member-desc">A chill guy with an awesome website.</p>
+            </div>
+          </a> 
+        
+          <a href="https://youssef-lmouden.is-a.dev" target="_blank" class="team-member-link">
+            <div class="team-member">
+                <img src="static/images/members/Youssef.png" class="team-member-img">
+                <h3 class="team-member-name">Youssef</h3>
+                <p class="team-member-role">Frontend lead</p>
+                <p class="team-member-desc">Just a regular guy who loves coding and playing Undertale, plus a fullstack dev with a passion for Rust.</p>
+            </div>
+          </a> 
+        
+        </div>
+        
       </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
   </body>
 </html>
