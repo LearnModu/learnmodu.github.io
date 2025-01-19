@@ -48,14 +48,14 @@ body::before {
 	--button-before-transform: skew(30deg);
 	--copy-btn-green: #708f78;
 	--copy-btn-cyan: #2c3f44;
-	--bg-message: #d5e2d1;
+	--bg-message: #ececec;
   	--text-message: #000000;
   	--bg-button-hover: #c3d4cb;
 	--primary-bg: #ffffff;
 	--card-bg: #f4f4f4;
 	--text-color: #333333;
-	  --shadow-team: rgba(0, 0, 0, 0.2);
-	  --hover-shadow: rgba(0, 0, 0, 0.3);
+	--shadow-team: rgba(0, 0, 0, 0.2);
+	--hover-shadow: rgba(0, 0, 0, 0.3);
 }
 
 :root[data-theme="dark"] {
@@ -77,14 +77,14 @@ body::before {
 	--button-before-transform: skew(30deg);
 	--copy-btn-green: #3b4d3b;
 	--copy-btn-cyan: #212e33;
-	--bg-message: #536250;
+	--bg-message: #363636;
   	--text-message: #ffffff;
   	--bg-button-hover: #445049;
-	  --primary-bg: #121212;
-	  --card-bg: #2d2d2d;
-	  --text-color: #ffffff;
-	  --shadow-team: rgba(0, 0, 0, 0.5);
-	  --hover-shadow: rgba(0, 0, 0, 0.7);
+	--primary-bg: #121212;
+	--card-bg: #2d2d2d;
+	--text-color: #ffffff;
+	--shadow-team: rgba(0, 0, 0, 0.5);
+	--hover-shadow: rgba(0, 0, 0, 0.7);
 }
 
 

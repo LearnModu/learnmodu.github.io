@@ -2,5 +2,9 @@
 
 # The website for LearnModu
 The repository of the website for LearnModu
+## What does it offer?
+- A seamless way to learn Modu
+- A glimpse at what we build here
+- Tips and Tricks for Modu
 
-## Confused and don't know what this is? Just click [here](https://learnmodu.github.io).
+<sub>Confused and don't know what this is? Just click [here](https://learnmodu.org).</sub>
