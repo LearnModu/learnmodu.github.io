@@ -173,26 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
 
-<<<<<<< HEAD
-    async function sendMessage(message) {
-        try {
-            const response = await fetch("https://example.com", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                mode: 'cors',
-                credentials: 'same-origin',
-                body: JSON.stringify({ message })
-            });
-            const data = await response.json();
-            return data.response;
-        } catch (error) {
-            console.error('Error:', error);
-            return 'We are working on enhancing the servers. Check back later.';
-        }
-    }
-=======
 	async function sendMessage(message) {
 		try {
 			const response = await fetch("https://cablyai.com/v1", {
@@ -291,7 +271,6 @@ Your main goal is to assist users in debugging, fixing, and understanding Modu p
 			return 'We are working on enhancing the servers. Check back later.';
 		}
 	}
->>>>>>> bafa1724184c94f2c5c30c0b8a9c051d708fba10
 
     function addMessage(content, isUser) {
         const messageDiv = document.createElement('div');
