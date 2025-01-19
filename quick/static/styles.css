@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Funnel Sans', sans-serif;
+	font-family: sans-serif;
 }
 
 body {
@@ -51,9 +50,6 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	background: var(--nav-bg);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border-radius: 20px;
 	padding: 20px 30px;
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
 	z-index: 1000;
@@ -104,10 +100,7 @@ body {
 .section {
 	margin-bottom: 60px;
 	padding: 30px;
-	border-radius: 20px;
 	background: var(--bg);
-	-webkit-backdrop-filter: blur(5px);
-	backdrop-filter: blur(5px);
 }
 
 .posts-grid {
@@ -131,7 +124,6 @@ article.posts-grid {
 
 .post {
 	background: var(--sect-bg);
-	border-radius: 12px;
 	padding: 1.5rem;
 	transition: transform 0.2s;
 	width: 100%;
@@ -145,7 +137,6 @@ article.posts-grid {
 	width: 100%;
 	height: 200px;
 	object-fit: cover;
-	border-radius: 8px;
 	margin-bottom: 1rem;
 }
 
@@ -185,21 +176,17 @@ article.posts-grid {
       text-decoration: none;
      display: inline-block;
      font-size: 16px;
-	 border-radius: 13px;
 	 transition: all 0.3s ease;
 }
 
 
 .gsc-control-cse {
-	border-radius: 20px;
 	padding: 10px 15px;
 }
 
 button.gsc-search-button {
-	border-radius: 15px;
 	padding: 8px 30px;
 }
 
 .gsc-input-box {
-	border-radius: 15px;
 }
