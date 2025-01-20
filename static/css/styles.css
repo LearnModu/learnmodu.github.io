@@ -629,6 +629,7 @@ body::before {
 
 .post-content li {
 	margin-left: 30px;
+	margin-top: 5px;
 }
 
 /* Heading spacing */
