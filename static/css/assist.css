@@ -142,3 +142,10 @@
         max-width: 800px;
     }
 }
+
+a {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
