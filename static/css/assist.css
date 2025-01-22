@@ -18,6 +18,15 @@
     margin-bottom: 10px;
 }
 
+.ai-message {
+	padding: 10px;
+}
+
+.user-message {
+	padding: 10px;
+	border-radius: 5px;
+}
+
 /* Link with gradient text effect */
 .post-content a {
     background: var(--gradient);

@@ -764,6 +764,15 @@ code {
 	display: none;
 }
 
+.ai-message {
+	padding: 10px;
+}
+
+.user-message {
+	padding: 10px;
+	border-radius: 5px;
+}
+
 .team-container {
     display: flex;
     justify-content: center;
