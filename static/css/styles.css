@@ -758,6 +758,12 @@ code {
 	box-shadow: var(--learn-modu-green) 0 4px 60px ;
 }
 
+.post-content hr[noshade] {
+	color: transparent;
+	background-color: transparent;
+	display: none;
+}
+
 .team-container {
     display: flex;
     justify-content: center;
